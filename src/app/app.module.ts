@@ -4,7 +4,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 
 import {AppRoutingModule} from './app-routing.module';
-import {ToggleAccordionModule} from "./core/directives/toggle-accordion/toggle-accordion.module";
 import {TestModule} from "./core/test/test.module";
 
 @NgModule({
@@ -14,7 +13,6 @@ import {TestModule} from "./core/test/test.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ToggleAccordionModule,
     TestModule
   ],
   providers: [],
