@@ -14,6 +14,8 @@ import {ServiceUserComponent} from "./service/modules/service-user/service-user.
 import { ServiceMobileComponent } from './service/modules/service-mobile/service-mobile.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
+import {ButtonComponent} from "./button/button.component";
+import {CustomColorDirective} from "./button/directives/custom-color.directive";
 
 
 @NgModule({
@@ -21,11 +23,14 @@ import {MatSortModule} from "@angular/material/sort";
     AccordionComponent,
     ServicesComponent,
     ServiceUserComponent,
-    ServiceMobileComponent
+    ServiceMobileComponent,
+    ButtonComponent,
+    CustomColorDirective
   ],
   exports: [
     AccordionComponent,
-    ServicesComponent
+    ServicesComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
