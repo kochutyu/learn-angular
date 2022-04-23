@@ -1,0 +1,10 @@
+<button (click)="show = !show">Click</button>
+
+<div class="accordion_wrapper" *ngIf="show" appToggleAccordionWrapper>
+  <div class="accordion_item" *ngFor="let item of [{id: 1}, {id: 2}, {id: 3}]; trackBy: trackByItem" appToggleAccordionItem>
+    1
+    <div class="accordion_item_content" (changeState)="loadDinamicData($event, item.id, content)" appToggleAccordionContent #content>
+      content-{{item.id}}
+    </div>
+  </div>
+</div>
