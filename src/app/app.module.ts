@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {TestModule} from "./core/test/test.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,10 @@ import {TestModule} from "./core/test/test.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TestModule
+    FormsModule,
+    ReactiveFormsModule,
+    TestModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

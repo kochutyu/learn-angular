@@ -1,0 +1,70 @@
+<table mat-table [dataSource]="dataSource" matSort>
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      #
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Created At Column -->
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Created At
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.createdAt | date: 'medium'}} </td>
+  </ng-container>
+
+  <!-- Default Config Column -->
+  <ng-container matColumnDef="isDefaultConfig">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      Default Config
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.isDefaultConfig}} </td>
+  </ng-container>
+
+  <!-- Locked Column -->
+  <ng-container matColumnDef="isLocked">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Locked
+    </th>
+    <td mat-cell (click)="changeLocked(element)" *matCellDef="let element"> {{element.isLocked}} </td>
+  </ng-container>
+
+  <!-- Active Column -->
+  <ng-container matColumnDef="isActive">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Active
+    </th>
+    <td mat-cell (click)="changeActive(element)" *matCellDef="let element"> {{element.isActive}} </td>
+  </ng-container>
+
+  <!-- Home Screen Url Column -->
+  <ng-container matColumnDef="homeScreenImgUrl">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Home Screen Url
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.homeScreenImgUrl}} </td>
+  </ng-container>
+
+  <!-- Type Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Type
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <!-- Service Name Url Column -->
+  <ng-container matColumnDef="serviceName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      Service Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.serviceName}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

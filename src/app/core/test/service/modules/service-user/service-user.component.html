@@ -1,0 +1,55 @@
+<form class="form" (ngSubmit)="createUser()" [formGroup]="createUserForm">
+  <h1>Create User</h1>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName">
+  </mat-form-field>
+
+  <button type="submit" class="full-width" color="primary" [disabled]="createUserForm.invalid" mat-raised-button>Create user</button>
+</form>
+
+<form class="form" (ngSubmit)="updateUser()" [formGroup]="updateUserForm">
+  <h1>Update User</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>User</mat-label>
+    <mat-select formControlName="id">
+      <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+        {{user.getFullName()}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName">
+  </mat-form-field>
+
+  <button type="submit" class="full-width" color="primary" [disabled]="updateUserForm.invalid" mat-raised-button>Update user</button>
+</form>
+
+<form class="form" (ngSubmit)="deleteUser()" [formGroup]="deleteUserForm">
+  <h1>Delete User</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>User</mat-label>
+    <mat-select formControlName="id">
+      <mat-option *ngFor="let user of users$ | async" [value]="user.id">
+        {{user.getFullName()}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button type="submit" class="full-width" color="primary" [disabled]="deleteUserForm.invalid" mat-raised-button>Delete user</button>
+</form>
