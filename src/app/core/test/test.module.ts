@@ -16,6 +16,9 @@ import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {ButtonComponent} from "./button/button.component";
 import {CustomColorDirective} from "./button/directives/custom-color.directive";
+import { DinamicTempateComponent } from './dinamic-tempate/dinamic-tempate.component';
+import {RouterModule} from "@angular/router";
+import { InterpolateTemplateDirective } from './dinamic-tempate/interpolate-template.directive';
 
 
 @NgModule({
@@ -25,12 +28,15 @@ import {CustomColorDirective} from "./button/directives/custom-color.directive";
     ServiceUserComponent,
     ServiceMobileComponent,
     ButtonComponent,
-    CustomColorDirective
+    CustomColorDirective,
+    DinamicTempateComponent,
+    InterpolateTemplateDirective
   ],
   exports: [
     AccordionComponent,
     ServicesComponent,
-    ButtonComponent
+    ButtonComponent,
+    DinamicTempateComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +49,8 @@ import {CustomColorDirective} from "./button/directives/custom-color.directive";
     MatOptionModule,
     MatSnackBarModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    RouterModule
   ]
 })
 export class TestModule {

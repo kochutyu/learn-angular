@@ -1,0 +1,67 @@
+<header>
+  <h1>Header</h1>
+</header>
+
+<ng-container [ngTemplateOutlet]="imageTemplate"
+              [ngTemplateOutletContext]="{
+                src: 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg',
+                alt: 'img'
+              }"
+></ng-container>
+<ng-container [ngTemplateOutlet]="imageTemplate"
+              [ngTemplateOutletContext]="{
+                src: 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg',
+                alt: 'img'
+              }"
+></ng-container>
+<ng-container [ngTemplateOutlet]="imageTemplate"
+              [ngTemplateOutletContext]="{
+                src: 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg',
+                alt: 'img'
+              }"
+></ng-container>
+<ng-container [ngTemplateOutlet]="imageTemplate"
+              [ngTemplateOutletContext]="{
+                src: 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg',
+                alt: 'img'
+              }"
+></ng-container>
+
+<footer>
+  <h1>Footer</h1>
+</footer>
+
+<ng-container [ngTemplateOutlet]="imageTemplate"
+              [ngTemplateOutletContext]="{
+                src: 'https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg',
+                alt: 'img'
+              }"
+></ng-container>
+
+
+<ng-container [ngComponentOutlet]="dinamicComponent"></ng-container>
+
+
+<div *appInterpolateTemplate>dsasdsds</div>
+
+<!--=>-->
+
+<!--<ng-container [ngTemplateOutlet]="templateRef<dsasdsds>"></ng-container>-->
+
+
+
+<!--function imageTemplate(obj: {src: string; alt: string;}) {-->
+<!--  const src = obj.src;-->
+<!--  const alt = obj.alt;-->
+<!--  return `-->
+<!--    <figure>-->
+<!--      <img [src]="src" [alt]="alt">-->
+<!--    </figure>-->
+<!--  `-->
+<!--}-->
+
+<ng-template #imageTemplate let-src="src" let-alt="alt">
+  <figure>
+    <img [src]="src" [alt]="alt">
+  </figure>
+</ng-template>
